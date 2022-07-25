@@ -4,6 +4,8 @@ import './App.css';
 function App() {
     const [tasks, setTasks] = React.useState([])
     const [task, setTask] = React.useState("")
+    const [taskEditing, setTaskEditing] = React.useState(null)
+    const [editingText, setEditingText] = React.useState("")
 
     function handleSubmit (e) {
         e.preventDefault()
@@ -49,6 +51,7 @@ function App() {
                     type="checkbox" 
                     onChange={() => toggleComplete(task.id)} 
                     checked={task.completed} />
+                <button type="submit">edit task</button>   
              </div>)}
         </div>
     );
