@@ -7,6 +7,20 @@ function App() {
     const [taskEditing, setTaskEditing] = React.useState(null)
     const [editingText, setEditingText] = React.useState("")
 
+React.useEffect(() => {
+    const temp = localStorage.getItem("tasks")
+    const loadedTasks = JSON.parse(temp)
+
+    if (loadedTasks) {
+        setTasks(loadedTasks)
+    }
+}, [])    
+
+React.useEffect(() => {
+    const temp = JSON.stringify(tasks)
+    localStorage.setItem("tasks", json)
+}, [tasks])
+
     function handleSubmit (e) {
         e.preventDefault()
 
@@ -38,6 +52,18 @@ function App() {
         setTasks(updatedTasks)
     }
 
+    function editTask(id) {
+        const updatedTasks = [... tasks].map(task => {
+            if (task.id === id) {
+                task.text = editingText
+            }
+            return task
+        })
+        setTasks(updatedTasks)
+        setTaskEditing(null)
+        setEditingText("")
+    }
+
     return (
         <div className="App">
             <form onSubmit={handleSubmit}>
@@ -58,7 +84,10 @@ function App() {
                     type="checkbox" 
                     onChange={() => toggleComplete(task.id)} 
                     checked={task.completed} />
-                <button onClick={() => setTaskEditing(task.id)}>Edit Task</button>   
+                
+                {taskEditing === task.id ? (<button onClick={() => editTask(task.id)}>Submit Edits</button>) : (<button onClick={() => setTaskEditing(task.id)}>Edit Task</button> )} 
+                 
+                 
              </div>)}
         </div>
     );
