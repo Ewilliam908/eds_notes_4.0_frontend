@@ -45,13 +45,20 @@ function App() {
                 <button type="submit">Commit</button>
             </form>
             {tasks.map((task) => <div key={task.id}>
-                <div>{task.text}</div>
+
+                {taskEditing === todo.id ? (<input 
+                type="text"  
+                onChange={(e) => setEditingText(e.target.value)} 
+                value={editingText} />) : (<div>{task.text}</div>) }
+                
+                
+               
                 <button onClick={() => deleteTask(task.id)}>Delete</button>
                 <input 
                     type="checkbox" 
                     onChange={() => toggleComplete(task.id)} 
                     checked={task.completed} />
-                <button type="submit">edit task</button>   
+                <button onClick={() => setTaskEditing(task.id)}>Edit Task</button>   
              </div>)}
         </div>
     );
