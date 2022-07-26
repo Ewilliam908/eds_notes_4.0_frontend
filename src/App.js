@@ -18,7 +18,7 @@ React.useEffect(() => {
 
 React.useEffect(() => {
     const temp = JSON.stringify(tasks)
-    localStorage.setItem("tasks", json)
+    localStorage.setItem("tasks", temp)
 }, [tasks])
 
     function handleSubmit (e) {
@@ -53,7 +53,7 @@ React.useEffect(() => {
     }
 
     function editTask(id) {
-        const updatedTasks = [... tasks].map(task => {
+        const updatedTasks = [...tasks].map(task => {
             if (task.id === id) {
                 task.text = editingText
             }
@@ -66,13 +66,14 @@ React.useEffect(() => {
 
     return (
         <div className="App">
+            <h1>Ed's Tasks</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={(e) => setTask(e.target.value)} value={task}/>
                 <button type="submit">Commit</button>
             </form>
             {tasks.map((task) => <div key={task.id}>
 
-                {taskEditing === todo.id ? (<input 
+                {taskEditing === task.id ? (<input 
                 type="text"  
                 onChange={(e) => setEditingText(e.target.value)} 
                 value={editingText} />) : (<div>{task.text}</div>) }
