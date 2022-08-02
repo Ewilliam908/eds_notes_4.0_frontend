@@ -66,10 +66,10 @@ React.useEffect(() => {
 
     return (
         <div className="App">
-            <h1>Ed's Tasks</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 className="text-center mt-5">Ed's Tasks</h1>
+            <form className="d-flex mt-5" onSubmit={handleSubmit}>
                 <input type="text" onChange={(e) => setTask(e.target.value)} value={task}/>
-                <button type="submit">Commit</button>
+                <button className="btn btn-success">Commit</button>
             </form>
             {tasks.map((task) => <div key={task.id}>
 
