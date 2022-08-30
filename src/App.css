@@ -1,5 +1,10 @@
+body {
+  background-color: blanchedalmond;
+}
+
 h1 {
   text-align: center;
+  background-color: rgb(101, 101, 133);
 }
 #todo-list {
   width: 500px;
