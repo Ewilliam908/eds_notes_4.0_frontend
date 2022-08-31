@@ -9,6 +9,25 @@ As someone who is always on the move, I needed somehwere to track my activities,
 * Work commitments
 * Personal commitments
 
+How to:
+* When the app is running, simply type in your task into the inbox, then click commit.
+* After committing, your task will be populated into the space below.
+* In the space below, you'll be able to check off, edit, and delete tasks.
+* Tasks will be saved in database.
+    Unfinished Functiontionality:
+    * Although backend was built, I had trouble connecting to frontend of app. 
+    * Connecting both the front and backend has been a trouble for me
+        * This is defintely an area that I need and will practice more often.
+        * Building and connecting databases are a component of my current employment, and future employemnt
+    * The design of Ed's Notes was more for functionality than style, due to time, and technical constraints.
+
+Technologies Used:
+* React JS
+* Node JS
+* PostgreSQL
+* Heroku
+* Github
+
 
 Wireframe:
 Method  |   Path    |   Purpose

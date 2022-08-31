@@ -9,7 +9,7 @@ function Login(props) {
   useEffect(() => {
     if(enteredUser) {
         const fetchData = async () => {
-            const response = await fetch(`https://localhost:3003/`, {
+            const response = await fetch(`https://localhost:3000/`, {
                 method: "POST",
                 headers: {
                     'Accept':'application/json',
