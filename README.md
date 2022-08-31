@@ -54,3 +54,11 @@ Name    |   Data-type   |   Prop
 ------------- | ------------- |------------
 tasks_id    |   Interger |   primary key
 description   |   VARCHAR    |   NOT NULL  
+
+
+References:
+* Stackoverflow.com
+* www.w3schools.com
+* NJIT SD-03 Canvas courses
+* www.youtube.com
+* www.sequelize.org
